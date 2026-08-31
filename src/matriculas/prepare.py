@@ -5,7 +5,7 @@ import pandas as pd
 from matriculas.config import BASE_YEAR, VALID_SEMESTER_CODES
 
 
-def prepare_period(df: pd.DataFrame, column: str = "PERIODO") -> pd.DataFrame:
+def prepare_period(df: pd.DataFrame, column: str = "period") -> pd.DataFrame:
     """Prepara la información temporal del período académico.
 
     Conserva únicamente los períodos regulares 10 y 20 y crea:
