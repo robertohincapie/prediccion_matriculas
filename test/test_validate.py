@@ -8,14 +8,16 @@ from matriculas.validate import (
 
 
 def valid_dataset():
-    return pd.DataFrame({
-        "period": [202510, 202520, 202610],
-        "course_code": ["COD1", "COD1", "COD1"],
-        "enrollment": [40, 45, 48],
-        "year": [2025, 2025, 2026],
-        "semester": [1, 2, 1],
-        "time_index": [20, 21, 22],
-    })
+    return pd.DataFrame(
+        {
+            "period": [202510, 202520, 202610],
+            "course_code": ["COD1", "COD1", "COD1"],
+            "enrollment": [40, 45, 48],
+            "year": [2025, 2025, 2026],
+            "semester": [1, 2, 1],
+            "time_index": [20, 21, 22],
+        }
+    )
 
 
 def test_valid_dataset_passes():

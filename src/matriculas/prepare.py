@@ -28,25 +28,22 @@ def prepare_period(df: pd.DataFrame, column: str = "PERIODO") -> pd.DataFrame:
     result["semester"] = result[column] % 100
 
     # Para este modelo solo interesan los semestres regulares
-    result = result[
-        result["semester"].isin(VALID_SEMESTER_CODES)
-    ].copy()
+    result = result[result["semester"].isin(VALID_SEMESTER_CODES)].copy()
 
     # 10 -> semestre 1
     # 20 -> semestre 2
-    result["semester"] = result["semester"].map({
-        10: 1,
-        20: 2,
-    })
+    result["semester"] = result["semester"].map(
+        {
+            10: 1,
+            20: 2,
+        }
+    )
 
     # Índice temporal:
     # 201510 -> 0
     # 201520 -> 1
     # 201610 -> 2
     # ...
-    result["time_index"] = (
-        2 * (result["year"] - BASE_YEAR)
-        + result["semester"] - 1
-    )
+    result["time_index"] = 2 * (result["year"] - BASE_YEAR) + result["semester"] - 1
 
     return result

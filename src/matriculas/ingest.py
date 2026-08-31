@@ -19,7 +19,7 @@ import hashlib
 import json
 import shutil
 import tempfile
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
@@ -123,7 +123,7 @@ def build_manifest(
         "source_url": source_url,
         "final_url": response_headers.get("final_url", source_url),
         "filename": stored_path.name,
-        "ingested_at_utc": datetime.now(timezone.utc).isoformat(),
+        "ingested_at_utc": datetime.now(UTC).isoformat(),
         "size_bytes": stored_path.stat().st_size,
         "sha256": sha256,
         "server_metadata": {
