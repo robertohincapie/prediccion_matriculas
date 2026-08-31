@@ -9,3 +9,9 @@ DEFAULT_SOURCE_URL = (
 )
 
 DEFAULT_RAW_DIR = PROJECT_ROOT / "data" / "raw"
+
+# Primer año utilizado como referencia para el índice temporal
+BASE_YEAR = 2015
+
+# Períodos académicos regulares que utilizaremos
+VALID_SEMESTER_CODES = (10, 20)
