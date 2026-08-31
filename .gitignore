@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Datos: la estructura existe, pero no se versionan los archivos ingeridos
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/predictions/*
+!data/predictions/.gitkeep
+
+# Modelos y artefactos
+models/*
+!models/.gitkeep
+
+# Variables locales / secretos
+.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
